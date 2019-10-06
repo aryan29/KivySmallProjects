@@ -1,0 +1,27 @@
+<ScreenManagement>:
+    Screen1:
+        id:sc1
+    Screen2:
+        id:sc2
+<Screen1>:
+    name:'screen1'
+    display:entry
+    BoxLayout:
+        orientation:'vertical'
+        padding:20
+        spacing:10
+        TextInput:
+            id:entry
+            multiline:False
+            font_size:40
+        Button:
+            text:'Submit'
+            font_size:50
+            color:0,1,1,1
+            on_release:root.manager.current='screen2'
+<Screen2>:
+    name:'screen2'
+    BoxLayout:
+        Label:
+            id:labeltext
+            text:"Retrieving rating wait for a second"
