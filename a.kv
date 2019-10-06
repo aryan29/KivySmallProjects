@@ -3,8 +3,13 @@
         id:sc1
     Screen2:
         id:sc2
+    Screen3:
+        id:sc3
+        name:'Screen3'
     Screen4:
         id:sc4
+    Screen5:
+        id:sc5
 <Screen1>:
     name:'screen1'
     display:entry
@@ -30,13 +35,16 @@
                 on_release:root.manager.current='screen4'
 <Screen2>:
     name:'screen2'
-    BoxLayout:
+    FloatLayout:
         Label:
             id:labeltext
             text:"Retrieving rating wait for a second"
         Button:
             text:"Back"
             on_release:root.manager.current="screen1"
+            pos_hint: {"right":0.3, "top":1}
+            size_hint: 0.3,0.2
+            background_color:0,1,1,1
 <Screen4>:
     name:'screen4'
     Screen3
@@ -46,3 +54,33 @@
             size_hint: 0.3,0.2
             pos_hint: {"right":0.3, "top":1}
             on_release:root.manager.current="screen1"
+            background_color:0,1,1,1
+        Button:
+            text:"Settings"
+            size_hint:0.2,0.2
+            pos_hint:{"right":1,"top":1}
+            on_release:root.manager.current="screen5"
+<Screen5>
+    name:'screen5'
+    BoxLayout:
+        orientation:'vertical'
+        padding:50
+        spacing:20
+        Label:
+            text:"Settings"
+            font_size:50
+        Button:
+            text:"Pink"
+            font_size:30
+            color:1,0,1,1
+            on_release:root.function()
+        Button:
+            text:"Cyan"
+            font_size:30
+            color:0,1,1,1
+        Button:
+            text:"Back"
+            size_hint: 0.3,0.2
+            pos_hint: {"right":0.3, "top":1}
+            on_release:root.manager.current="screen4"
+
