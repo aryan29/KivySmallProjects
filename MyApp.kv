@@ -1,0 +1,36 @@
+<ScreenManagement>:
+    MainScreen:
+        id:mainscreen
+    OneMore:
+    DrawInput:
+
+<MainScreen>:
+    display:entry
+    name:'main'
+    BoxLayout:
+        orientation:'vertical'
+        spacing:10
+        TextInput:
+            id:entry
+            font_size:32
+            multiline:False
+        Button:
+            on_release:root.manager.current='onemore'
+            text:'Lets See'
+            font_size:50
+        Label:
+            id:my_label
+            text:entry.text
+<OneMore>:
+    name:'onemore'
+    BoxLayout:
+        Label:
+            id:mylabel
+            text:root.manager.ids.mainscreen.display.text
+            on_text:root.change_label()
+        Button:
+            on_release:root.manager.current='draw'
+            text:'draw'
+            font_size:50
+<DrawInput>
+    name:'draw'
